@@ -9,8 +9,6 @@ def creation_date(path_to_file):
         try:
             return stat.st_birthtime
         except AttributeError:
-            # We're probably on Linux. No easy way to get creation dates here,
-            # so we'll settle for when its content was last modified.
             return stat.st_mtime
 
 def just_create_file(dir):
